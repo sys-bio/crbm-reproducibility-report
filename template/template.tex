@@ -1,0 +1,233 @@
+\documentclass{article}
+\usepackage[margin=2cm,headheight=50pt,includeheadfoot]{geometry}
+\usepackage{graphicx}
+\usepackage{helvet}
+\usepackage[labelfont=bf]{caption}
+\usepackage{float}
+\usepackage{inconsolata}
+\usepackage[backend=bibtex,style=ieee]{biblatex}
+\usepackage{amssymb}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[breakable]{tcolorbox}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{titling}
+\usepackage[none]{hyphenat} % turn this on if you want to remove hyphenation
+\usepackage{bbding}
+\usepackage{pifont}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{enumitem,amssymb}
+\usepackage{pifont}
+\usepackage{tikz}
+\usetikzlibrary{shapes}
+
+% Define new commands for checkboxes/ checkbox colors
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\newcommand{\absent}{\raisebox{0pt}{\tikz{\node[draw,scale=0.7,regular polygon, regular polygon sides=4,fill=none](){};}}}
+\newcommand{\present}{\raisebox{0pt}{\tikz{\node[draw,scale=0.7,regular polygon, regular polygon sides=4,fill=black!20!Cerulean](){};}}}
+
+% Define link colors
+\renewcommand{\familydefault}{\sfdefault}
+\date{}
+\usepackage{fancyhdr}
+\setcounter{secnumdepth}{0} % sections are level 1
+\hypersetup{
+    colorlinks=true, % make the links colored
+    linkcolor=blue, % color TOC links in blue
+    citecolor=blue,
+    urlcolor=blue, % color URLs in blue
+    linktoc=all % 'all' will create links for everything in the TOC
+    }
+
+% Define fancy header 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\textbf{Director:} Professor Herbert M. Sauro \\ University of Washington, Seattle, WA \\ \href{https://reproduciblebiomodels.org}{https://reproduciblebiomodels.org}}
+\fancyhead[L]{\includegraphics[width=5cm]{\VAR{logo_image}}}
+\rfoot{\thepage}
+
+
+\begin{document}
+
+\noindent
+\textbf{Reproducibility report for:} \VAR{title}
+\\
+\textbf{Submitted to:} \VAR{journal}
+\\
+\textbf{Manuscript number/identifier:} \VAR{journal_submission_id}
+
+\bigskip
+\noindent
+\textbf{Curation outcome summary:} \VAR{curation_outcome_summary}
+\vspace{5mm}
+\begin{tcolorbox}[breakable,height fill,
+colback=white,
+arc=0pt,
+outer arc=0pt,
+colframe=white,
+top=2mm,
+toptitle=2mm,
+bottomtitle=2mm,
+colbacktitle=white!80!black,
+colframe=black,
+coltitle=black, 
+title= \textbf{Box 1:} Criteria for repeatability and reproducibility]
+$\absent$ \textbf{Model source code provided:}
+\begin{todolist}
+  \item [\absent] Source code: a standard procedural language is used (e.g. MATLAB, Python, C)
+  \begin{todolist}
+      \item[\absent] There are details/ documentation on how the source code was compiled
+      \item[\absent] There are details on how to run the code in the provided documentation
+      \item[\absent] The initial conditions are provided for each of the simulations
+      \item[\absent] Details for creating reported graphical results from the simulation results
+  \end{todolist}
+  
+  \item[\absent] Source code: a declarative language is used (e.g. SBML, CellML, NeuroML)
+  \begin{todolist}
+    \item[\absent] The algorithms used are defined or cited in previous articles
+    \item[\absent] The algorithm parameters are defined
+    \item[\absent] Post-processing of the results are described in sufficient detail
+  \end{todolist}
+\end{todolist}
+$\present$ \textbf{Model source code not provided:}
+\begin{todolist}
+    \item[\absent] The model is executable without source (e.g. desktop application, compiled code, online service)
+    \begin{todolist}
+        \item[\absent] There are sufficient details to repeat the required simulation experiments
+    \end{todolist}
+\end{todolist}
+$\present$ \textbf{The model is described mathematically in the article(s):}
+\begin{todolist}
+    \item[\present] Equations representing the biological system
+    \item[\absent] There are tables of parameter values
+    \item[\absent] There are tables of initial conditions
+    \item Machine-readable tables of parameter values
+    \item Machine-readable tables of initial conditions
+\end{todolist}
+$\absent$ \textbf{The simulation experiments using the model are described mathematically in the article:}
+\begin{todolist}
+    \item[\absent] Integration algorithms used are defined
+    \item[\absent] Stochastic algorithms used are defined
+    \item[\absent] Random number generator algorithms used are defined
+    \item Parameter fitting algorithms are defined
+    \item The paper indicates how the algorithms yield the desired output
+\end{todolist}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+colback=white,
+arc=0pt,
+outer arc=0pt,
+colframe=white,
+top=2mm,
+toptitle=2mm,
+bottomtitle=2mm,
+colbacktitle=white!80!black,
+colframe=black,
+coltitle=black, 
+title= \textbf{Box 2:} Criteria for accessibility]
+
+\begin{todolist}
+  \item[\absent] Model/ source code is available at a public repository or researcher's web site
+  \begin{todolist}
+    \item Prohibitive license provided
+    \item[\absent] Permissive license provided
+    \item Open-source license provided
+  \end{todolist}
+  \item[\absent] All initial conditions and parameters are provided
+  \item[\absent] All simulation experiments are fully defined (events listed, collection times and measurements specified, algorithms provided, simulator specified, etc.)
+\end{todolist}
+\end{tcolorbox}
+
+
+\begin{tcolorbox}[
+colback=white,
+arc=0pt,
+outer arc=0pt,
+colframe=white,
+top=2mm,
+toptitle=2mm,
+bottomtitle=2mm,
+colbacktitle=white!80!black,
+colframe=black,
+coltitle=black, 
+title= \textbf{Box 3:} Rules for Credible practice of
+ Modeling and Simulation\footnote{Model credibility is assessed using the Interagency Modeling and Ananlysis Group conformance rubric:\\ \href{https://www.imagwiki.nibib.nih.gov/content/10-simple-rules-conformance-rubric}{https://www.imagwiki.nibib.nih.gov/content/10-simple-rules-conformance-rubric}}]
+\begin{todolist}
+    \item[\present]Define context clearly: Extensive
+    \item[\present]Use appropriate data: Partial
+    \item[\present]Evaluate within context: Adequate
+    \item[\absent]List limitations explicitly: Insufficient
+    \item[\absent]Use version control: Insufficient
+    \item[\present]Document adequately: Partial
+    \item[\absent]Conform to standards: Insufficient
+\end{todolist}
+\end{tcolorbox}
+
+\begin{tcolorbox}[
+colback=white,
+arc=0pt,
+outer arc=0pt,
+colframe=white,
+top=2mm,
+toptitle=2mm,
+bottomtitle=2mm,
+colbacktitle=white!80!black,
+colframe=black,
+coltitle=black, 
+title= \textbf{Box 4:} Evaluation]
+\begin{todolist}
+    \item[\absent] Model and its simulations could be repeated using provided declarative or procedural code
+    \item[\absent] Model and its simulations could be reproduced
+\end{todolist}
+\end{tcolorbox}
+
+
+\newpage
+\bigskip
+\noindent
+\textbf{Summary comments:} \VAR{summary_comments}
+
+% \bigskip
+% \noindent
+% Could be several paragraphs needed to describe this so 
+
+\bigskip
+\bigskip
+\bigskip
+\begin{figure}[ht]
+\begin{minipage}[b]{0.45\linewidth}
+\centering
+Anand K. Rampadarath\footnotemark, PhD
+\\
+Curator
+\\
+Center for Reproducible Biomedical Modeling
+\end{minipage}
+\hspace{0.5cm}
+\begin{minipage}[b]{0.45\linewidth}
+\centering
+David P. Nickerson, PhD
+\\
+Curation Service Director
+\\
+Center for Reproducible Biomedical Modeling
+\end{minipage}
+\end{figure}
+\footnotetext{Email: a.rampadarath@auckland.ac.nz}
+\begin{figure}[ht]
+\centering
+Auckland Bioengineering Institute,
+\\
+University of Auckland
+\end{figure}
+
+
+
+
+
+
+\end{document}

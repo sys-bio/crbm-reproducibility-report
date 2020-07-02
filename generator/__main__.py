@@ -15,11 +15,11 @@ class BaseController(cement.Controller):
                                      required=True,
                                      help='Path to JSON encoded input file describing the report.')),
             (['-t', '--template-directory'], dict(type=str,
-                                                  default='.',
+                                                  default='template',
                                                   help='Path to the LaTeX template directory.')),
-            (['-o', '--output-directory'], dict(type=str,
-                                                default='.',
-                                                help='Directory to save generated report files.')),
+            (['-o', '--output-file'], dict(type=str,
+                                               required=True,
+                                               help='Name of the PDF file that will be generated.')),
             (['-v', '--version'], dict(action='version',
                                        version=generator.__version__)),
         ]
@@ -27,7 +27,7 @@ class BaseController(cement.Controller):
     @cement.ex(hide=True)
     def _default(self):
         args = self.app.pargs
-        generate_report(args.input, args.template_directory, args.output_directory)
+        generate_report(args.input, args.template_directory, args.output_file)
 
 class App(cement.App):
     """ Command line application """

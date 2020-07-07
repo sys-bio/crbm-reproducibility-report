@@ -30,6 +30,9 @@ def generate_report(input_file, template_directory, output_file, compilation_log
     # create a generator that can locate our template directory
     generator = ReportGenerator(template_directory)
 
+    # preprocess our report description
+    generator.process_report_description(report_description)
+
     # and fetch the report template
     template = generator.get_template("template.tex")
 

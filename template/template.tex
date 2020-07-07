@@ -56,7 +56,7 @@
 \\
 \textbf{Submitted to:} \VAR{journal}
 \\
-\textbf{Manuscript number/identifier:} \VAR{journal_submission_id}
+\textbf{Manuscript identifier:} \VAR{journal_submission_id}
 
 \bigskip
 \noindent
@@ -74,45 +74,45 @@ colbacktitle=white!80!black,
 colframe=black,
 coltitle=black, 
 title= \textbf{Box 1:} Criteria for repeatability and reproducibility]
-$\VAR{rubric[0][0]}$ \textbf{Model source code provided:}
+$\VAR{_er[0]}$ \textbf{Model source code provided:}
 \begin{todolist}
-  \item [\present] Source code: a standard procedural language is used (e.g. MATLAB, Python, C)
+  \item [$\VAR{_er[1]}$] Source code: a standard procedural language is used (e.g. MATLAB, Python, C)
   \begin{todolist}
-      \item[\present] There are details/ documentation on how the source code was compiled
-      \item[\absent] There are details on how to run the code in the provided documentation
-      \item[\absent] The initial conditions are provided for each of the simulations
-      \item[\absent] Details for creating reported graphical results from the simulation results
+      \item[\VAR{_er[2]}] There are details/ documentation on how the source code was compiled
+      \item[\VAR{_er[3]}] There are details on how to run the code in the provided documentation
+      \item[\VAR{_er[4]}] The initial conditions are provided for each of the simulations
+      \item[\VAR{_er[5]}] Details for creating reported graphical results from the simulation results
   \end{todolist}
   
-  \item[\present] Source code: a declarative language is used (e.g. SBML, CellML, NeuroML)
+  \item[$\VAR{_er[6]}$] Source code: a declarative language is used (e.g. SBML, CellML, NeuroML)
   \begin{todolist}
-    \item[\absent] The algorithms used are defined or cited in previous articles
-    \item[\absent] The algorithm parameters are defined
-    \item[\absent] Post-processing of the results are described in sufficient detail
+    \item[\VAR{_er[7]}] The algorithms used are defined or cited in previous articles
+    \item[\VAR{_er[8]}] The algorithm parameters are defined
+    \item[\VAR{_er[9]}] Post-processing of the results are described in sufficient detail
   \end{todolist}
 \end{todolist}
-$\VAR{rubric[0][1]}$ \textbf{Model source code not provided:}
+$\VAR{_er[10]}$ \textbf{Model source code not provided:}
 \begin{todolist}
-    \item[\absent] The model is executable without source (e.g. desktop application, compiled code, online service)
+    \item[\VAR{_er[11]}] The model is executable without source (e.g. desktop application, compiled code, online service)
     \begin{todolist}
-        \item[\absent] There are sufficient details to repeat the required simulation experiments
+        \item[\VAR{_er[12]}] There are sufficient details to repeat the required simulation experiments
     \end{todolist}
 \end{todolist}
-$\VAR{rubric[0][2]}$ \textbf{The model is described mathematically in the article(s):}
+$\VAR{_er[13]}$ \textbf{The model is described mathematically in the article(s):}
 \begin{todolist}
-    \item[\present] Equations representing the biological system
-    \item[\absent] There are tables of parameter values
-    \item[\absent] There are tables of initial conditions
-    \item Machine-readable tables of parameter values
-    \item Machine-readable tables of initial conditions
+    \item[\VAR{_er[14]}] Equations representing the biological system
+    \item[\VAR{_er[15]}] There are tables of parameter values
+    \item[\VAR{_er[16]}] There are tables of initial conditions
+    \item[\VAR{_er[17]}] Machine-readable tables of parameter values
+    \item[\VAR{_er[18]}] Machine-readable tables of initial conditions
 \end{todolist}
-$\VAR{rubric[0][3]}$ \textbf{The simulation experiments using the model are described mathematically in the article:}
+$\VAR{_er[19]}$ \textbf{The simulation experiments using the model are described mathematically in the article:}
 \begin{todolist}
-    \item[\absent] Integration algorithms used are defined
-    \item[\absent] Stochastic algorithms used are defined
-    \item[\absent] Random number generator algorithms used are defined
-    \item Parameter fitting algorithms are defined
-    \item The paper indicates how the algorithms yield the desired output
+    \item[\VAR{_er[20]}] Integration algorithms used are defined
+    \item[\VAR{_er[21]}] Stochastic algorithms used are defined
+    \item[\VAR{_er[22]}] Random number generator algorithms used are defined
+    \item[\VAR{_er[23]}] Parameter fitting algorithms are defined
+    \item[\VAR{_er[24]}] The paper indicates how the algorithms yield the desired output
 \end{todolist}
 \end{tcolorbox}
 
@@ -131,14 +131,14 @@ coltitle=black,
 title= \textbf{Box 2:} Criteria for accessibility]
 
 \begin{todolist}
-  \item[\VAR{rubric[1][0]}] Model/source code is available at a public repository or researcher's web site
+  \item[\VAR{rubric2[1][0]}] Model/source code is available at a public repository or researcher's web site
   \begin{todolist}
     \item[\absent] Prohibitive license provided
     \item[\absent] Permissive license provided
     \item[\absent] Open-source license provided
   \end{todolist}
-  \item[\VAR{rubric[1][1]}] All initial conditions and parameters are provided
-  \item[\VAR{rubric[1][2]}] All simulation experiments are fully defined (events listed, collection times and measurements specified, algorithms provided, simulator specified, etc.)
+  \item[\VAR{rubric2[1][1]}] All initial conditions and parameters are provided
+  \item[\VAR{rubric2[1][2]}] All simulation experiments are fully defined (events listed, collection times and measurements specified, algorithms provided, simulator specified, etc.)
 \end{todolist}
 \end{tcolorbox}
 
@@ -158,54 +158,54 @@ title= \textbf{Box 3:} Rules for Credible practice of
  Modeling and Simulation\footnote{Model credibility is assessed using the Interagency Modeling and Ananlysis Group conformance rubric:\\ \href{https://www.imagwiki.nibib.nih.gov/content/10-simple-rules-conformance-rubric}{https://www.imagwiki.nibib.nih.gov/content/10-simple-rules-conformance-rubric}}]
 \begin{todolist}
     \item[
-        %% if rubric[2][0] == 'Insufficient'
+        %% if rubric2[2][0] == 'Insufficient'
             \absent
         %% else
             \present
         %% endif
-    ] Define context clearly: \VAR{rubric[2][0]}
+    ] Define context clearly: \VAR{rubric2[2][0]}
     \item[
-        %% if rubric[2][1] == 'Insufficient'
+        %% if rubric2[2][1] == 'Insufficient'
             \absent
         %% else
             \present
         %% endif
-    ] Use appropriate data: \VAR{rubric[2][1]}
+    ] Use appropriate data: \VAR{rubric2[2][1]}
     \item[
-        %% if rubric[2][2] == 'Insufficient'
+        %% if rubric2[2][2] == 'Insufficient'
             \absent
         %% else
             \present
         %% endif
-    ] Evaluate within context: \VAR{rubric[2][2]}
+    ] Evaluate within context: \VAR{rubric2[2][2]}
     \item[
-        %% if rubric[2][3] == 'Insufficient'
+        %% if rubric2[2][3] == 'Insufficient'
             \absent
         %% else
             \present
         %% endif
-    ] List limitations explicitly: \VAR{rubric[2][3]}
+    ] List limitations explicitly: \VAR{rubric2[2][3]}
     \item[
-        %% if rubric[2][4] == 'Insufficient'
+        %% if rubric2[2][4] == 'Insufficient'
             \absent
         %% else
             \present
         %% endif
-    ] Use version control: \VAR{rubric[2][4]}
+    ] Use version control: \VAR{rubric2[2][4]}
     \item[
-        %% if rubric[2][5] == 'Insufficient'
+        %% if rubric2[2][5] == 'Insufficient'
             \absent
         %% else
             \present
         %% endif
-    ] Document adequately: \VAR{rubric[2][5]}
+    ] Document adequately: \VAR{rubric2[2][5]}
     \item[
-        %% if rubric[2][6] == 'Insufficient'
+        %% if rubric2[2][6] == 'Insufficient'
             \absent
         %% else
             \present
         %% endif
-    ] Conform to standards: \VAR{rubric[2][6]}
+    ] Conform to standards: \VAR{rubric2[2][6]}
 \end{todolist}
 \end{tcolorbox}
 
@@ -222,8 +222,8 @@ colframe=black,
 coltitle=black, 
 title= \textbf{Box 4:} Evaluation]
 \begin{todolist}
-    \item[\VAR{rubric[3][0]}] Model and its simulations could be repeated using provided declarative or procedural code
-    \item[\VAR{rubric[3][1]}] Model and its simulations could be reproduced
+    \item[\VAR{rubric2[3][0]}] Model and its simulations could be repeated using provided declarative or procedural code
+    \item[\VAR{rubric2[3][1]}] Model and its simulations could be reproduced
 \end{todolist}
 \end{tcolorbox}
 

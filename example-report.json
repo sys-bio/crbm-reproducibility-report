@@ -5,6 +5,51 @@
   "curation_outcome_summary": "One or two sentences summarizing the outcome of the curation report.",
   "summary_comments": "This would be a longer bit of text, giving details about what was tested and what worked. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   "rubric":
+  {
+    "reproducibility_criteria":
+    {
+      "procedural_code":
+      {
+        "present": true,
+        "compilation_documentation": true,
+        "execution_documentation": false,
+        "boundary_conditions": true,
+        "postprocessing_documentation": false
+      },
+      "declarative_code":
+      {
+        "present": false,
+        "algorithms_documented": true,
+        "algorithms_parameterised": false,
+        "postprocessing_documentation": true
+      },
+      "executable_implementation":
+      {
+        "present": true,
+        "executable": false,
+        "simulations_documented": true
+      },
+      "mathematical_description":
+      {
+        "present": true,
+        "equations": false,
+        "parameters": true,
+        "boundary_conditions": false,
+        "machine_parameters": true,
+        "machine_boundary_conditions": true
+      },
+      "simulation_experiments":
+      {
+        "present": false,
+        "integration_algorithm": true,
+        "stochastic_algorithm": false,
+        "random_number_generator": true,
+        "parameter_estimation_algorithm": true,
+        "simulation_execution_documentation": false
+      }
+    }
+  },
+  "rubric2":
   [
     [
       "\\present",

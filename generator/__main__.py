@@ -18,8 +18,10 @@ class BaseController(cement.Controller):
                                                   default='template',
                                                   help='Path to the LaTeX template directory.')),
             (['-o', '--output-file'], dict(type=str,
-                                               required=True,
-                                               help='Name of the PDF file that will be generated.')),
+                                            required=True,
+                                            help='Name of the PDF file that will be generated.')),
+            (['-l', '--pdftex-log'], dict(action='store_true',
+                                          help='Dump the pdftex compilation log to the terminal.')),
             (['-v', '--version'], dict(action='version',
                                        version=generator.__version__)),
         ]
@@ -27,7 +29,7 @@ class BaseController(cement.Controller):
     @cement.ex(hide=True)
     def _default(self):
         args = self.app.pargs
-        generate_report(args.input, args.template_directory, args.output_file)
+        generate_report(args.input, args.template_directory, args.output_file, args.pdftex_log)
 
 class App(cement.App):
     """ Command line application """

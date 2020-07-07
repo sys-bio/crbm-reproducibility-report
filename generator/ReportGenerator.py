@@ -1,6 +1,6 @@
 import os
 import jinja2
-from subprocess import Popen
+from subprocess import Popen, PIPE
 import tempfile
 import shutil
 
@@ -28,13 +28,18 @@ class ReportGenerator:
     def get_template(self, template_filename):
         return self._latex_jinja_env.get_template(template_filename)
 
-    def compile_tex(self, rendered_tex, out_pdf_path):
+    def compile_tex(self, rendered_tex, out_pdf_path, print_log):
         tmp_dir = tempfile.mkdtemp()
         in_tmp_path = os.path.join(tmp_dir, 'rendered.tex')
         with open(in_tmp_path, 'w') as outfile:
             outfile.write(rendered_tex)
         out_tmp_path = os.path.join(tmp_dir, 'out.pdf')
-        p = Popen(['pdflatex', '-jobname', 'out', '-output-directory', tmp_dir, in_tmp_path])
-        p.communicate()
+        p = Popen(['pdflatex', '-jobname', 'out', '-output-directory', tmp_dir, in_tmp_path], stdout=PIPE, stderr=PIPE)
+        [stdout, stderr] = p.communicate()
+        if print_log:
+            print("pdftex stdout:\n==============\n")
+            print(stdout.decode('utf-8'))
+            print("\npdftex stderr:\n==============\n")
+            print(stderr.decode('utf-8'))
         shutil.copy(out_tmp_path, out_pdf_path)
         shutil.rmtree(tmp_dir)

@@ -7,13 +7,14 @@ __all__ = ['generate_report']
 
 
 
-def generate_report(input_file, template_directory, output_file):
+def generate_report(input_file, template_directory, output_file, compilation_log):
     """ Generate the given reproducibility report from the given input file, saving generated PDF to the output file.
 
     Args:
         input_file (:obj:`str`): path to JSON document describing the report
         template_directory (:obj:`str`): directory to the LaTeX template directory
         output_file (:obj:`str`): filename to save the generated PDF report to
+        compilation_log (:obj:`bool`): print pdftex compilation log to terminal if true
     """
     print("Generating the CRBM Reproducibility Report from: " + input_file +
           "; with generated report saved to: " + output_file)
@@ -35,5 +36,7 @@ def generate_report(input_file, template_directory, output_file):
     # process the template using the information from the input file
     rendered_tex = template.render(report_description)
     #print(rendered_tex)
-    generator.compile_tex(rendered_tex, output_file)
+
+    # and compile the rendered LaTeX into a PDF...
+    generator.compile_tex(rendered_tex, output_file, compilation_log)
 

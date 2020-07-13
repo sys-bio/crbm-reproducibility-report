@@ -4,33 +4,27 @@
   "journal_submission_id": "Journal-identifier",
   "curation_outcome_summary": "One or two sentences summarizing the outcome of the curation report.",
   "summary_comments": "This would be a longer bit of text, giving details about what was tested and what worked. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-  "rubric":
-  {
-    "reproducibility_criteria":
-    {
-      "procedural_code":
-      {
+  "rubric": {
+    "reproducibility_criteria": {
+      "procedural_code": {
         "present": true,
         "compilation_documentation": true,
         "execution_documentation": false,
         "boundary_conditions": true,
         "postprocessing_documentation": false
       },
-      "declarative_code":
-      {
+      "declarative_code": {
         "present": false,
         "algorithms_documented": true,
         "algorithms_parameterised": false,
         "postprocessing_documentation": true
       },
-      "executable_implementation":
-      {
+      "executable_implementation": {
         "present": true,
         "executable": false,
         "simulations_documented": true
       },
-      "mathematical_description":
-      {
+      "mathematical_description": {
         "present": true,
         "equations": false,
         "parameters": true,
@@ -38,8 +32,7 @@
         "machine_parameters": true,
         "machine_boundary_conditions": true
       },
-      "simulation_experiments":
-      {
+      "simulation_experiments": {
         "present": false,
         "integration_algorithm": true,
         "stochastic_algorithm": false,
@@ -47,33 +40,30 @@
         "parameter_estimation_algorithm": true,
         "simulation_execution_documentation": false
       }
+    },
+    "accessibility_criteria": {
+      "source_code_available": {
+        "present": false,
+        "prohibitive_license": false,
+        "permissive_license": true,
+        "osi_license": true
+      },
+      "initial_conditions_provided": false,
+      "seds_fully_defined": true
+    },
+    "credible_practice_rubric": {
+      "define_context": "Extensive",
+      "appropriate_data": "Extensive",
+      "evaluation_context": "Adequate",
+      "list_limitations": "Insufficient",
+      "version_control": "Adequate",
+      "documentation": "Partial",
+      "standards": "Insufficient"
+    },
+    "evaluation_result":
+    {
+      "repeatable": true,
+      "reproducible": false
     }
-  },
-  "rubric2":
-  [
-    [
-      "\\present",
-      "\\absent",
-      "\\present",
-      "\\absent"
-    ],
-    [
-      "\\present",
-      "\\present",
-      "\\absent"
-    ],
-    [
-      "Extensive",
-      "Extensive",
-      "Adequate",
-      "Insufficient",
-      "Adequate",
-      "Partial",
-      "Insufficient"
-    ],
-    [
-      "\\absent",
-      "\\present"
-    ]
-  ]
+  }
 }

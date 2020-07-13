@@ -41,45 +41,68 @@ class ReportGenerator:
         :param report_description:
         :return:
         """
-        encoded_rubric = []
+        encoded_rubric = [None] * 50
         rubric = report_description['rubric']
         reproducibility_criteria = rubric['reproducibility_criteria']
 
         pcode = reproducibility_criteria['procedural_code']
         dcode = reproducibility_criteria['declarative_code']
-        encoded_rubric.append(texify(pcode['present'] or dcode['present']))
+        encoded_rubric[0] = texify(pcode['present'] or dcode['present'])
 
-        encoded_rubric.append(texify(pcode['present']))
-        encoded_rubric.append(texify(pcode['compilation_documentation']))
-        encoded_rubric.append(texify(pcode['execution_documentation']))
-        encoded_rubric.append(texify(pcode['boundary_conditions']))
-        encoded_rubric.append(texify(pcode['postprocessing_documentation']))
+        encoded_rubric[1] = texify(pcode['present'])
+        encoded_rubric[2] = texify(pcode['compilation_documentation'])
+        encoded_rubric[3] = texify(pcode['execution_documentation'])
+        encoded_rubric[4] = texify(pcode['boundary_conditions'])
+        encoded_rubric[5] = texify(pcode['postprocessing_documentation'])
 
-        encoded_rubric.append(texify(dcode['present']))
-        encoded_rubric.append(texify(dcode['algorithms_documented']))
-        encoded_rubric.append(texify(dcode['algorithms_parameterised']))
-        encoded_rubric.append(texify(dcode['postprocessing_documentation']))
+        encoded_rubric[6] = texify(dcode['present'])
+        encoded_rubric[7] = texify(dcode['algorithms_documented'])
+        encoded_rubric[8] = texify(dcode['algorithms_parameterised'])
+        encoded_rubric[9] = texify(dcode['postprocessing_documentation'])
 
         exe = reproducibility_criteria['executable_implementation']
-        encoded_rubric.append(texify(exe['present']))
-        encoded_rubric.append(texify(exe['executable']))
-        encoded_rubric.append(texify(exe['simulations_documented']))
+        encoded_rubric[10] = texify(exe['present'])
+        encoded_rubric[11] = texify(exe['executable'])
+        encoded_rubric[12] = texify(exe['simulations_documented'])
 
         math = reproducibility_criteria['mathematical_description']
-        encoded_rubric.append(texify(math['present']))
-        encoded_rubric.append(texify(math['equations']))
-        encoded_rubric.append(texify(math['parameters']))
-        encoded_rubric.append(texify(math['boundary_conditions']))
-        encoded_rubric.append(texify(math['machine_parameters']))
-        encoded_rubric.append(texify(math['machine_boundary_conditions']))
+        encoded_rubric[13] = texify(math['present'])
+        encoded_rubric[14] = texify(math['equations'])
+        encoded_rubric[15] = texify(math['parameters'])
+        encoded_rubric[16] = texify(math['boundary_conditions'])
+        encoded_rubric[17] = texify(math['machine_parameters'])
+        encoded_rubric[18] = texify(math['machine_boundary_conditions'])
 
         sed = reproducibility_criteria['simulation_experiments']
-        encoded_rubric.append(texify(sed['present']))
-        encoded_rubric.append(texify(sed['integration_algorithm']))
-        encoded_rubric.append(texify(sed['stochastic_algorithm']))
-        encoded_rubric.append(texify(sed['random_number_generator']))
-        encoded_rubric.append(texify(sed['parameter_estimation_algorithm']))
-        encoded_rubric.append(texify(sed['simulation_execution_documentation']))
+        encoded_rubric[19] = texify(sed['present'])
+        encoded_rubric[20] = texify(sed['integration_algorithm'])
+        encoded_rubric[21] = texify(sed['stochastic_algorithm'])
+        encoded_rubric[22] = texify(sed['random_number_generator'])
+        encoded_rubric[23] = texify(sed['parameter_estimation_algorithm'])
+        encoded_rubric[24] = texify(sed['simulation_execution_documentation'])
+
+        a11y = rubric["accessibility_criteria"]
+        source = a11y["source_code_available"]
+        encoded_rubric[25] = texify(source["present"])
+        encoded_rubric[26] = texify(source["prohibitive_license"])
+        encoded_rubric[27] = texify(source["permissive_license"])
+        encoded_rubric[28] = texify(source["osi_license"])
+
+        encoded_rubric[29] = texify(a11y["initial_conditions_provided"])
+        encoded_rubric[30] = texify(a11y["seds_fully_defined"])
+
+        credibility = rubric["credible_practice_rubric"]
+        encoded_rubric[31] = credibility["define_context"]
+        encoded_rubric[32] = credibility["appropriate_data"]
+        encoded_rubric[33] = credibility["evaluation_context"]
+        encoded_rubric[34] = credibility["list_limitations"]
+        encoded_rubric[35] = credibility["version_control"]
+        encoded_rubric[36] = credibility["documentation"]
+        encoded_rubric[37] = credibility["standards"]
+
+        result = rubric["evaluation_result"]
+        encoded_rubric[38] = texify(result["repeatable"])
+        encoded_rubric[39] = texify(result["reproducible"])
 
         report_description['_er'] = encoded_rubric
 

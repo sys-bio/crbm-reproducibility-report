@@ -8,19 +8,27 @@ Python script to generate a CRBM report from a LaTeX template using Jinja2.
 2. Clone this repository
 3. `pip install -r requirements.txt`
 
+If wanting to generate PDFs then `pdflatex` will also need to be available.
+
 ## Using
 
 ```
 (venv) $> python crbm-generator.py --help
 ```
 
-To generate example report when in the root folder of the cloned repository:
+To generate an example report LaTeX when in the root folder of the cloned repository:
+
+```
+(venv) $> python crbm-generator.py -i example-report.json
+```
+
+To generate an example report and compile to PDF, when in the root folder of the cloned repository (requires `pdflatex` to be available):
 
 ```
 (venv) $> python crbm-generator.py -i example-report.json -o example.pdf
 ```
 
-To generate the example report outside the root folder of the cloned repository:
+To generate the example report LaTeX outside the root folder of the cloned repository:
 
 ```
 (venv) $> python path/to/crbm-reproducibility-report/crbm-generator.py -i path/to/crbm-reproducibility-report/example-report.json -t path/to/crbm-reproducibility-report/template

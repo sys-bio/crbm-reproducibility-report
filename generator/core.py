@@ -13,11 +13,15 @@ def generate_report(input_file, template_directory, output_file, compilation_log
     Args:
         input_file (:obj:`str`): path to JSON document describing the report
         template_directory (:obj:`str`): directory to the LaTeX template directory
-        output_file (:obj:`str`): filename to save the generated PDF report to
+        output_file (:obj:`str`): filename to save the generated PDF report to, if required
         compilation_log (:obj:`bool`): print pdftex compilation log to terminal if true
     """
-    print("Generating the CRBM Reproducibility Report from: " + input_file +
-          "; with generated report saved to: " + output_file)
+    msg = 'Generating the CRBM Reproducibility Report from: {}'.format(input_file)
+    if output_file is None:
+        msg += '; generating LaTeX to the console.'
+    else:
+        msg += '; with generated report saved to: {}'.format(output_file)
+    print(msg)
 
     # load the input file
     report_description = {}
@@ -40,6 +44,9 @@ def generate_report(input_file, template_directory, output_file, compilation_log
     rendered_tex = template.render(report_description)
     #print(rendered_tex)
 
-    # and compile the rendered LaTeX into a PDF...
-    generator.compile_tex(rendered_tex, output_file, compilation_log)
+    # if an output PDF file is provided, compile the rendered LaTeX into a PDF...
+    if output_file is None:
+        print(rendered_tex)
+    else:
+        generator.compile_tex(rendered_tex, output_file, compilation_log)
 

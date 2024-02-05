@@ -1,4 +1,6 @@
 {
+  "curator_name": "Curator Smith",
+  "curator_degree": "PhD",
   "title": "Title of the submission being evaluated.",
   "journal": "Name of Journal",
   "journal_submission_id": "Journal-identifier",

@@ -43,7 +43,4 @@ JSON file containing the information required for the report. See `example-repor
 Blank Overleaf template of v 1.3 available at https://www.overleaf.com/read/htfphvrdgfsb#360fd0
 
 
-## Documentation 
-
-Documentation for v 1.3 is available at https://docs.google.com/spreadsheets/d/1NFApGabBi3ZtP328lVAYsy0dCcfHoXfnvjzz7Byl3Mk/edit?usp=sharing
 

@@ -40,7 +40,7 @@ JSON file containing the information required for the report. See `example-repor
 
 
 ## Documentation
-Documentation for the report's contents is available here (https://github.com/s-fong/crbm-reproducibility-report/blob/main/documentation_table.md) 
+Documentation for the report's contents is available [here](documentation_table.md).
 
 
 ## Overleaf

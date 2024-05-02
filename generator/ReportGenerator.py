@@ -91,15 +91,6 @@ class ReportGenerator:
         encoded_rubric[29] = texify(a11y["initial_conditions_provided"])
         encoded_rubric[30] = texify(a11y["seds_fully_defined"])
 
-        credibility = rubric["credible_practice_rubric"]
-        encoded_rubric[31] = credibility["define_context"]
-        encoded_rubric[32] = credibility["appropriate_data"]
-        encoded_rubric[33] = credibility["evaluation_context"]
-        encoded_rubric[34] = credibility["list_limitations"]
-        encoded_rubric[35] = credibility["version_control"]
-        encoded_rubric[36] = credibility["documentation"]
-        encoded_rubric[37] = credibility["standards"]
-
         result = rubric["evaluation_result"]
         encoded_rubric[38] = texify(result["repeatable"])
         encoded_rubric[39] = texify(result["reproducible"])

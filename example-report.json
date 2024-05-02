@@ -53,15 +53,6 @@
       "initial_conditions_provided": false,
       "seds_fully_defined": true
     },
-    "credible_practice_rubric": {
-      "define_context": "Extensive",
-      "appropriate_data": "Extensive",
-      "evaluation_context": "Adequate",
-      "list_limitations": "Insufficient",
-      "version_control": "Adequate",
-      "documentation": "Partial",
-      "standards": "Insufficient"
-    },
     "evaluation_result":
     {
       "repeatable": true,

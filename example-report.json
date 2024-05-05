@@ -46,8 +46,7 @@
     "accessibility_criteria": {
       "source_code_available": {
         "present": false,
-        "prohibitive_license": false,
-        "permissive_license": true,
+        "provided": true,
         "osi_license": true
       },
       "initial_conditions_provided": false,

@@ -21,14 +21,12 @@
 \usepackage{bbding}
 \usepackage{pifont}
 \usepackage{wasysym}
-\usepackage{amssymb}
-\usepackage{enumitem,amssymb}
-\usepackage{pifont}
+\usepackage{enumitem}
 \usepackage{tikz}
 \usetikzlibrary{shapes}
 
 % Define new commands for checkboxes/ checkbox colors
-\newlist{todolist}{itemize}{2}
+\newlist{todolist}{itemize}{3}
 \setlist[todolist]{label=$\square$}
 \newcommand{\absent}{\raisebox{0pt}{\tikz{\node[draw,scale=0.7,regular polygon, regular polygon sides=4,fill=none](){};}}}
 \newcommand{\present}{\raisebox{0pt}{\tikz{\node[draw,scale=0.7,regular polygon, regular polygon sides=4,fill=black!20!Cerulean](){};}}}
@@ -139,84 +137,15 @@ title= \textbf{Box 2:} Criteria for accessibility]
 \begin{todolist}
   \item[\VAR{_er[25]}] Model/source code is available at a public repository or researcher's web site
   \begin{todolist}
-    %\item[\VAR{_er[26]}] Proprietary license provided
-    %\item[\VAR{_er[27]}] Permissive license provided
-    %\item[\VAR{_er[28]}] Open-source license provided
 	\item[\VAR{_er[28]}] License provided
-		\item[\VAR{_er[999]}] License is Open Source Initiative (OSI)-approved 
+	\begin{todolist}
+	  \item[\VAR{_er[40]}] License is Open Source Initiative (OSI)-approved 
+	\end{todolist}
   \end{todolist}
   %\item[\VAR{_er[29]}] All initial conditions and parameters are provided
   \item[\VAR{_er[30]}] All simulation experiments are fully defined (events listed, collection times and measurements specified, algorithms provided, simulator specified, etc.)
 \end{todolist}
 \end{tcolorbox}
-
-\iffalse
-\begin{tcolorbox}[
-colback=white,
-arc=0pt,
-outer arc=0pt,
-colframe=white,
-top=2mm,
-toptitle=2mm,
-bottomtitle=2mm,
-colbacktitle=white!80!black,
-colframe=black,
-coltitle=black, 
-title= \textbf{Box 3:} Rules for Credible practice of
- Modeling and Simulation\footnote{Model credibility is assessed using the Interagency Modeling and Analysis Group conformance rubric:\\ \href{https://www.imagwiki.nibib.nih.gov/content/10-simple-rules-conformance-rubric}{https://www.imagwiki.nibib.nih.gov/content/10-simple-rules-conformance-rubric}}]
-\begin{todolist}
-    \item[
-        %% if _er[31] == 'Insufficient'
-            \absent
-        %% else
-            \present
-        %% endif
-    ] Define context clearly: \VAR{_er[31]}
-    \item[
-        %% if _er[32] == 'Insufficient'
-            \absent
-        %% else
-            \present
-        %% endif
-    ] Use appropriate data: \VAR{_er[32]}
-    \item[
-        %% if _er[33] == 'Insufficient'
-            \absent
-        %% else
-            \present
-        %% endif
-    ] Evaluate within context: \VAR{_er[33]}
-    \item[
-        %% if _er[34] == 'Insufficient'
-            \absent
-        %% else
-            \present
-        %% endif
-    ] List limitations explicitly: \VAR{_er[34]}
-    \item[
-        %% if _er[35] == 'Insufficient'
-            \absent
-        %% else
-            \present
-        %% endif
-    ] Use version control: \VAR{_er[35]}
-    \item[
-        %% if _er[36] == 'Insufficient'
-            \absent
-        %% else
-            \present
-        %% endif
-    ] Document adequately: \VAR{_er[36]}
-    \item[
-        %% if _er[37] == 'Insufficient'
-            \absent
-        %% else
-            \present
-        %% endif
-    ] Conform to standards: \VAR{_er[37]}
-\end{todolist}
-\end{tcolorbox}
-\fi 
 
 \begin{tcolorbox}[
 colback=white,

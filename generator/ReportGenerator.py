@@ -84,9 +84,8 @@ class ReportGenerator:
         a11y = rubric["accessibility_criteria"]
         source = a11y["source_code_available"]
         encoded_rubric[25] = texify(source["present"])
-        encoded_rubric[26] = texify(source["prohibitive_license"])
-        encoded_rubric[27] = texify(source["permissive_license"])
-        encoded_rubric[28] = texify(source["osi_license"])
+        encoded_rubric[28] = texify(source["provided"])
+        encoded_rubric[40] = texify(source["osi_license"])
 
         encoded_rubric[29] = texify(a11y["initial_conditions_provided"])
         encoded_rubric[30] = texify(a11y["seds_fully_defined"])

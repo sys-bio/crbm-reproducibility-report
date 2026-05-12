@@ -19,36 +19,65 @@ In an effort to ease the generation of reproducibility reports, we have created 
 
 ### Installation
 
-1. Make a Python virtual environment in the usual way
+1. Install `uv` (https://docs.astral.sh/uv/getting-started/installation/)
 2. Clone this repository
-3. `pip install -r requirements.txt`
+3. From the repository root, run `uv sync`
+
+This creates and manages a local virtual environment in `.venv` and installs dependencies from `pyproject.toml`.
 
 If wanting to generate PDFs then `pdflatex` will also need to be available.
 
 ### Using
 
 ```
-(venv) $> python crbm-generator.py --help
+$> uv run python crbm-generator.py --help
 ```
 
 To generate an example report LaTeX when in the root folder of the cloned repository:
 
 ```
-(venv) $> python crbm-generator.py -i example-report.json
+$> uv run python crbm-generator.py -i example-report.json
 ```
 
 To generate an example report and compile to PDF, when in the root folder of the cloned repository (requires `pdflatex` to be available):
 
 ```
-(venv) $> python crbm-generator.py -i example-report.json -o example.pdf
+$> uv run python crbm-generator.py -i example-report.json -o example.pdf
 ```
 
 To generate the example report LaTeX outside the root folder of the cloned repository:
 
 ```
-(venv) $> python path/to/crbm-reproducibility-report/crbm-generator.py -i path/to/crbm-reproducibility-report/example-report.json -t path/to/crbm-reproducibility-report/template
+$> uv run python path/to/crbm-reproducibility-report/crbm-generator.py -i path/to/crbm-reproducibility-report/example-report.json -t path/to/crbm-reproducibility-report/template
 ```
 
 ### Report description file
 
 JSON file containing the information required for the report. See [`example-report.json`](example-report.json) for an example.
+
+## Development
+
+Common `uv` commands for maintaining dependencies:
+
+```bash
+# Sync environment from pyproject.toml/uv.lock
+uv sync
+
+# Add a new runtime dependency
+uv add <package>
+
+# Add a development-only dependency
+uv add --dev <package>
+
+# Remove a dependency
+uv remove <package>
+
+# Upgrade all dependencies to latest allowed versions
+uv lock --upgrade
+
+# Run commands in the managed environment
+uv run python crbm-generator.py --help
+
+# (Optional) Export pinned requirements for pip-based consumers
+uv export --format requirements-txt --no-hashes -o requirements.txt
+```

@@ -1,0 +1,18 @@
+[project]
+name = "crbm-reproducibility-report"
+version = "1.1.0"
+description = "Generator for CRBM reproducibility report LaTeX/PDF outputs"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "cement==3.0.14",
+    "Jinja2==2.11.2",
+    "MarkupSafe==1.1.1",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["generator"]

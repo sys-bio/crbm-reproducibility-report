@@ -1,3 +1,7 @@
-cement==3.0.4
+# Managed with uv via pyproject.toml.
+# Install with: uv sync
+# Optional export for pip users: uv export --format requirements-txt --no-hashes -o requirements.txt
+
+cement==3.0.14
 Jinja2==2.11.2
 MarkupSafe==1.1.1

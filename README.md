@@ -48,7 +48,7 @@ $> uv run python crbm-generator.py -i example-report.json -o example.pdf
 To generate the example report LaTeX outside the root folder of the cloned repository:
 
 ```
-$> uv run python path/to/crbm-reproducibility-report/crbm-generator.py -i path/to/crbm-reproducibility-report/example-report.json -t path/to/crbm-reproducibility-report/template
+$> uv run --project path/to/crbm-reproducibility-report/ python path/to/crbm-reproducibility-report/crbm-generator.py  -t path/to/crbm-reproducibility-report/template -i crbm-report.json -o crbm-report.pdf
 ```
 
 ### Report description file

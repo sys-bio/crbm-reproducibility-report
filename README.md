@@ -30,25 +30,31 @@ If wanting to generate PDFs then `pdflatex` will also need to be available.
 ### Using
 
 ```
-$> uv run python crbm-generator.py --help
+$> uv run crbm-generator --help
 ```
 
 To generate an example report LaTeX when in the root folder of the cloned repository:
 
 ```
-$> uv run python crbm-generator.py -i example-report.json
+$> uv run crbm-generator -i example-report.json
 ```
 
 To generate an example report and compile to PDF, when in the root folder of the cloned repository (requires `pdflatex` to be available):
 
 ```
-$> uv run python crbm-generator.py -i example-report.json -o example.pdf
+$> uv run crbm-generator -i example-report.json -o example.pdf
 ```
 
-To generate the example report LaTeX outside the root folder of the cloned repository:
+To generate a report outside the root folder of the cloned repository:
 
 ```
-$> uv run --project path/to/crbm-reproducibility-report/ python path/to/crbm-reproducibility-report/crbm-generator.py  -t path/to/crbm-reproducibility-report/template -i crbm-report.json -o crbm-report.pdf
+$> uv run --project path/to/crbm-reproducibility-report crbm-generator -i crbm-report.json -o crbm-report.pdf
+```
+
+When running through the project, the default template directory is discovered automatically from the project source. You can still override it explicitly with `-t` if needed:
+
+```bash
+uv run --project path/to/crbm-reproducibility-report crbm-generator -t path/to/custom/template -i crbm-report.json -o crbm-report.pdf
 ```
 
 ### Report description file
@@ -76,7 +82,7 @@ uv remove <package>
 uv lock --upgrade
 
 # Run commands in the managed environment
-uv run python crbm-generator.py --help
+uv run crbm-generator --help
 
 # (Optional) Export pinned requirements for pip-based consumers
 uv export --format requirements-txt --no-hashes -o requirements.txt

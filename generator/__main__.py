@@ -1,6 +1,12 @@
 import cement
 import generator
+from pathlib import Path
 from .core import generate_report
+
+
+def default_template_directory():
+    """Return the repository template path relative to this package."""
+    return str((Path(__file__).resolve().parents[1] / 'template'))
 
 
 class BaseController(cement.Controller):
@@ -15,7 +21,7 @@ class BaseController(cement.Controller):
                                      required=True,
                                      help='Path to JSON encoded input file describing the report.')),
             (['-t', '--template-directory'], dict(type=str,
-                                                  default='template',
+                                                  default=default_template_directory(),
                                                   help='Path to the LaTeX template directory.')),
             (['-o', '--output-file'], dict(type=str,
                                             required=False,
@@ -41,6 +47,10 @@ class App(cement.App):
         ]
 
 
-if __name__ == "__main__":
+def main():
     with App() as app:
         app.run()
+
+
+if __name__ == "__main__":
+    main()
